@@ -1,0 +1,236 @@
+004-005 @READ_PROGRAM_MEMORY8.P1
+004-005 @MEMSET.P2
+004-005 @WRITE_PROGRAM_MEMORY8.P3
+008     PSP_DATA
+015     CCP_1_LOW
+015     CCP_1
+016     CCP_1_HIGH
+01B     CCP_2
+01B     CCP_2_LOW
+01C     CCP_2_HIGH
+020     @CURRENT_TASK
+021     @TRIS_C
+022-033 employeeUID
+034-06F employeeNames
+070-075 UID
+076     TagType
+077     @SCRATCH
+077     @MEMSET.P1
+078     @SCRATCH
+078     @MEMSET.P1
+078     _RETURN_
+079     @SCRATCH
+07A     @SCRATCH
+07B     found
+07C     sentFlag
+07D     timeout_counter
+09C.6   C1OUT
+09C.7   C2OUT
+0A0-0A6 @TASKINFO1_2_2_0_0
+0A7-0AD @TASKINFO2_2_2_0_0
+0AE     lcd_init.i
+0AE     MFRC522_AntennaOn.stt
+0AE     MAIN.@SCRATCH1
+0AF-0B2 lcd_init.LCD_INIT_STRING
+0B3     lcd_init.@SCRATCH1
+0EF     read_rfid.j
+0EF     update_lcd.j
+10D-10E @WRITE_PROGRAM_MEMORY8.P1
+10D-10E @READ_PROGRAM_MEMORY8.P2
+110     update_lcd.i
+110     read_rfid.i
+111     @MUL88.P1
+111-112 MFRC522_ReadCardSerial.str
+111-112 MFRC522_isCard.TagType
+111     MFRC522_Halt.unLen
+111     read_rfid.@SCRATCH1
+111     update_lcd.@SCRATCH1
+111     @PSTRINGC7_649.@SCRATCH1
+112     @PRINTF_X_649.P1
+112     @MUL88.P2
+112-115 MFRC522_Halt.buff
+112     @PRINTF_X_9600_62_63.P1
+112     read_rfid.@SCRATCH2
+112     update_lcd.@SCRATCH2
+112     @PSTRINGC7_649.@SCRATCH2
+113     MFRC522_ReadCardSerial._status
+113-114 check_UID.data
+113     @PRINTF_X_9600_62_63.P1
+113     MFRC522_Request.reqMode
+113     @PRINTF_X_649.P1
+113     MFRC522_isCard.@SCRATCH1
+113     @PSTRINGR_9600_62_63.@SCRATCH1
+113     @PSTRINGC7_649.@SCRATCH3
+113     @PSTRINGR_649.@SCRATCH1
+114-115 MFRC522_Request.TagType
+114-115 MFRC522_AntiColl.serNum
+114     MFRC522_ReadCardSerial.@SCRATCH1
+114     @PSTRINGR_9600_62_63.@SCRATCH2
+114     @PSTRINGC7_649.@SCRATCH4
+114     @PSTRINGR_649.@SCRATCH2
+115     lcd_putc.c
+115-116 check_UID.UID
+115     MFRC522_ReadCardSerial.@SCRATCH2
+116     @delay_ms1.P1
+116-117 MFRC522_CRC.dataIn
+116     MFRC522_Request._status
+116     lcd_gotoxy.x
+116     MFRC522_AntiColl._status
+117     lcd_gotoxy.y
+117     MFRC522_Request.backBits
+117     check_UID.i
+117     MFRC522_AntiColl.i
+118     MFRC522_CRC.length
+118     lcd_gotoxy.address
+118     MFRC522_AntiColl.serNumCheck
+118     MFRC522_Request.@SCRATCH1
+118     check_UID.@SCRATCH1
+119     MFRC522_AntiColl.unLen
+119-11A MFRC522_CRC.dataOut
+119     lcd_gotoxy.@SCRATCH1
+119     MFRC522_Request.@SCRATCH2
+11A     MFRC522_ToCard.command
+11A     lcd_send_byte.address
+11A     MFRC522_AntiColl.@SCRATCH1
+11B-11C MFRC522_ToCard.sendData
+11B     MFRC522_CRC.i
+11B     lcd_send_byte.n
+11B     MFRC522_AntiColl.@SCRATCH2
+11C     MFRC522_CRC.n
+11C     lcd_read_byte.low
+11C     lcd_send_byte.@SCRATCH1
+11D     lcd_send_nibble.n
+11D     lcd_read_byte.high
+11D     MFRC522_ToCard.sendLen
+11D     MFRC522_CRC.@SCRATCH1
+11E     lcd_read_nibble.n
+11E-11F MFRC522_ToCard.backData
+11E     lcd_read_byte.@SCRATCH1
+11E     MFRC522_CRC.@SCRATCH2
+11F     lcd_read_nibble.@SCRATCH1
+120-121 MFRC522_ToCard.backLen
+122     MFRC522_ToCard._status
+123     MFRC522_ToCard.irqEn
+124     MFRC522_ToCard.waitIRq
+125     MFRC522_ToCard.lastBits
+126     MFRC522_ToCard.n
+127     MFRC522_ToCard.i
+128     MFRC522_Clear_Bit.addr
+128     MFRC522_Set_Bit.addr
+128     MFRC522_ToCard.@SCRATCH1
+129     MFRC522_Clear_Bit.mask
+129     MFRC522_Set_Bit.mask
+129     MFRC522_ToCard.@SCRATCH2
+12A     MFRC522_Clear_Bit.tmp
+12A     MFRC522_Set_Bit.tmp
+12A     MFRC522_ToCard.@SCRATCH3
+12B     MFRC522_Rd.address
+12B     MFRC522_Clear_Bit.@SCRATCH1
+12B     MFRC522_Set_Bit.@SCRATCH1
+12C     MFRC522_Wr.address
+12C     MFRC522_Rd.i
+12D     MFRC522_Wr.value
+12D     MFRC522_Rd.ucAddr
+12E     MFRC522_Rd.ucResult
+12E     MFRC522_Wr.i
+12F     MFRC522_Wr.ucAddr
+12F     MFRC522_Rd.@SCRATCH1
+130     MFRC522_Wr.@SCRATCH1
+
+ROM Allocation:
+000004  @const809.call
+00000C  MFRC522_Wr
+000077  MFRC522_Rd
+0000E6  MFRC522_ToCard
+000222  @MUL88
+000249  check_UID
+00026A  read_rfid
+00026E  MFRC522_isCard
+000274  MFRC522_Request
+0002B1  MFRC522_ReadCardSerial
+0002B5  MFRC522_AntiColl
+00036F  @PSTRINGR_9600_62_63
+0003AE  @PRINTF_X_9600_62_63
+0003DA  MFRC522_Halt
+0003E9  MFRC522_CRC
+0004C3  @delay_ms1
+0004D7  @PSTRINGC7_649
+00052B  @MEMSET
+000534  update_lcd
+000585  @PSTRINGR_649
+0005C8  @PRINTF_X_649
+000618  @const787.call
+000620  @const791.call
+000628  @const792.call
+00062B  @const798.call
+000632  @const803.call
+00063B  @const807.call
+000642  @const808.call
+00064B  MFRC522_Init
+000652  MFRC522_Reset
+00069B  MFRC522_AntennaOff
+0006A0  MFRC522_Clear_Bit
+0006B2  MFRC522_AntennaOn
+0006C0  MFRC522_Set_Bit
+000800  lcd_putc
+000ADA  lcd_gotoxy
+001000  lcd_init
+0010D5  lcd_send_byte
+0010DE  lcd_read_byte
+001134  lcd_read_nibble
+0011E9  lcd_send_nibble
+00122C  @cinit1
+00122C  MAIN
+001243  @cinit2
+
+Project Directory:
+    C:\Users\tuan\Downloads\NHUNG\
+
+Project Files:
+    main.c                                                  [02-Jan-25 06:25  CRC=17EFD2F2]
+    ..\..\..\..\Program Files (x86)\PICC\Devices\16F877A.h  [12-Nov-13 14:35  CRC=81334808]
+    ..\..\..\..\Program Files (x86)\PICC\Drivers\lcd.c      [19-Sep-13 15:38  CRC=D1A6378A]
+    Built_in.h                                              [04-Oct-14 15:10  CRC=54A21C2B]
+
+Source signature=140D8ADA
+
+Units:
+    main (main)
+
+Compiler Settings:
+    Processor:      PIC16F877A
+    Pointer Size:   16
+    ADC Range:      0-1023
+    Opt Level:      9
+    Short,Int,Long: UNSIGNED: 1,8,16
+    Float,Double:   32,32
+
+Task Info:
+    Ticks: 100 ns
+    Cycle: 10 ms
+
+Tasks:
+    read_rfid
+    update_lcd
+
+Task Schedule:
+      10 ms  772:read_rfid
+    Sync to next 10 ms
+      10 ms  785:update_lcd
+    Sync to next 10 ms
+    Wait 80 ms
+      10 ms  772:read_rfid
+    Sync to next 10 ms
+    Wait 90 ms
+
+Output Files:
+    XREF file:   main.xsym
+    Errors:      main.err
+    Ext Symbols: main.esym
+    INHX8:       main.hex
+    Symbols:     main.sym
+    List:        main.lst
+    Debug/COFF:  main.cof
+    Project:     main.ccspjt
+    Call Tree:   main.tre
+    Statistics:  main.STA

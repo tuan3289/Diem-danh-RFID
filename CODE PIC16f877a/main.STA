@@ -1,0 +1,90 @@
+
+ROM used:   4403/8192 (54%)
+            4980/8192 (61%) including unused fragments
+
+            2.5 Average locations per line
+            11.2 Average locations per statement
+
+RAM used:   110/368 (30%) at main() level
+            208/368 (57%) worst case
+
+Stack used: 7 worst case (3 in main + 4 for interrupts)
+Stack size: 8
+
+Lines Stmts  %   Files
+----- ----- ---  -----
+  128    67  17  main.c
+  671     0   0  ..\..\..\..\Program Files (x86)\PICC\Devices\16F877A.h
+  456   100  25  ..\..\..\..\Program Files (x86)\PICC\Drivers\lcd.c
+  535   227  58  Built_in.h
+----- -----
+ 1790   394 Total
+
+Page ROM  %  RAM   Vol Diff  Functions:
+---- --- --- ---   --- ----  ----------
+0     20   0    1             @delay_ms1
+ Inline         3   760  4.5  lcd_read_byte
+ Inline         2   262  3.7  lcd_read_nibble
+ Inline         1   399  2.4  lcd_send_nibble
+ Inline         3   415  3.7  lcd_send_byte
+2    556  13    6   852  6.2  lcd_init
+ Inline         4   208  6.3  lcd_gotoxy
+1   1771  40    1   354  4.7  lcd_putc
+0    111   3    5   840  7.7  MFRC522_Rd
+0    107   2    5   808  6.2  MFRC522_Wr
+ Inline         4   127  3.3  MFRC522_Clear_Bit
+ Inline         4   120  2.8  MFRC522_Set_Bit
+ Inline         0   197  1.8  MFRC522_Reset
+ Inline         1    72  2.0  MFRC522_AntennaOn
+ Inline         0    25  1.2  MFRC522_AntennaOff
+0    137   3    0   298  1.9  MFRC522_Init
+0    316   7   17  2288 15.8  MFRC522_ToCard
+ Inline         7   319  6.0  MFRC522_Request
+ Inline         9   568  8.2  MFRC522_CRC
+ Inline         5   302  3.3  MFRC522_Halt
+ Inline         8   581  8.2  MFRC522_AntiColl
+ Inline         3    89  3.6  MFRC522_isCard
+ Inline         5   149  4.7  MFRC522_ReadCardSerial
+0     33   1    5   189  5.6  check_UID
+0    601  14    2   764  7.2  read_rfid
+0     39   1    2   884  7.7  @MUL88
+ Inline         2   595  6.5  @PSTRINGR_9600_62_63
+ Inline         2             @PRINTF_X_9600_62_63
+0    228   5    2   743  7.2  update_lcd
+0      8   0    0   499  6.2  @const787
+0     84   2    4   240  2.6  @PSTRINGC7_649
+ Inline         2    55  1.1  @PSTRINGR_649
+0      8   0    0   161  2.1  @const791
+0      3   0    0   377  3.8  @const792
+ Inline         2   240  2.6  @PRINTF_X_649
+0      7   0    0   240  2.6  @const798
+0      9   0    0   240  2.6  @MEMSET
+0      9   0    0   265  2.7  @const803
+2    328   7    1   265  2.7  MAIN
+0      7   0    0   287  4.0  @const807
+0      9   0    0             @const808
+0      8   0    0    90  1.5  @const809
+ Inline         0             @cinit1
+
+Program metrics:
+    Functions               39
+    Statements              394
+    Comments                283
+    Volume (V)              30196
+    Difficulty (D)          177.5
+    Effort to implement (E) 5360295
+    Time to implement (T)   82 hours, 43 minutes
+    Est Delivered Bugs (B)  10
+    Cyclomatic Complexity   71
+    Maintainability (MI)    56
+
+ Segment     Used  Free
+-----------  ----  ----
+00000-00003     4  0  
+00004-007FF  1744  300  
+00800-00FFF  1771  277  
+01000-017FF   884  1164  
+01800-01FFF     0  2048  
+
+
+
